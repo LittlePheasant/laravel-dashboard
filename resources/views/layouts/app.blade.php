@@ -18,6 +18,11 @@
 
   <link href="{{ asset('admin_assets/vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
 
+  <!-- Filepond stylesheet -->
+  <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
+  <link rel='stylesheet' href='https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css'>
+  <link rel='stylesheet' href='https://unpkg.com/filepond-plugin-file-poster/dist/filepond-plugin-file-poster.css'>
+
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
@@ -125,6 +130,16 @@
     // Update the displayed date and time every second (1000 milliseconds)
     setInterval(updateDateTime, 1000);
   </script>
+
+  <!-- Load FilePond library -->
+  <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
+  <script src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
+  <script src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.js"></script>
+  <script src="https://unpkg.com/filepond-plugin-file-poster/dist/filepond-plugin-file-poster.js"></script>
+
+  <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+  <script src='https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.min.js'></script>
+
 
 </body>
 </html>

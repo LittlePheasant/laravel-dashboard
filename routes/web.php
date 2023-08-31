@@ -8,6 +8,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ActualReportController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\DownloadController;
+use App\Http\Controllers\UploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,7 @@ Route::prefix('dashboard')->group(function () {
 
     Route::get('/accomplishment-reports', [ReportController::class, 'accomplishments_reports'])->name('acc-report');
     Route::get('/accomplishment-reports/{id}', [ReportController::class, 'show'])->name('report-byId');
+    
 
     Route::get('/actual-accomplishment-reports', [ActualReportController::class, 'actual_reports'])->name('actual-reports');
 
@@ -45,4 +47,9 @@ Route::prefix('dashboard')->group(function () {
 
     Route::get('/downloads-list', [DownloadController::class, 'downloads_list'])->name('downloads-list');
     Route::get('/downloads-list/{id}', [DownloadController::class, 'downloadInfoByID'])->name('downloadInfoByID');
+});
+
+Route::controller(UploadController::class)->group(function () {
+    Route::post('/upload', 'store')->name('upload');
+    Route::delete('/delete', 'destroy')->name('destroy');    
 });
